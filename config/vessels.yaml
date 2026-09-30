@@ -1,0 +1,168 @@
+# GreenFleet Q - Vessel Archetype Configuration
+# Standard IMO / Clarkson's Research technical parameters for merchant fleet archetypes
+
+vessels:
+  - id: "container_feeder"
+    name: "Container Feeder"
+    category: "Container"
+    capacity: 1800
+    capacity_unit: "TEU"
+    deadweight_dwt: 22000
+    lightship_tonnes: 8500
+    displacement_tonnes: 30500
+    length_m: 172.0
+    beam_m: 28.4
+    design_draft_m: 9.5
+    design_speed_knots: 17.5
+    min_speed_knots: 10.0
+    max_speed_knots: 20.0
+    engine_mcr_kw: 12500
+    aux_engine_kw: 1800
+    base_sfoc_g_per_kwh: 178.0
+    compatible_fuels:
+      - "hfo"
+      - "mgo"
+      - "methanol_grey"
+      - "methanol_green"
+    capex_usd: 35000000
+    opex_usd_per_day: 6200
+    shore_power_equipped: true
+    shore_power_retrofit_cost_usd: 650000
+
+  - id: "panamax_container"
+    name: "Panamax Container"
+    category: "Container"
+    capacity: 5200
+    capacity_unit: "TEU"
+    deadweight_dwt: 65000
+    lightship_tonnes: 21000
+    displacement_tonnes: 86000
+    length_m: 294.0
+    beam_m: 32.3
+    design_draft_m: 13.5
+    design_speed_knots: 21.0
+    min_speed_knots: 11.0
+    max_speed_knots: 23.5
+    engine_mcr_kw: 38000
+    aux_engine_kw: 3500
+    base_sfoc_g_per_kwh: 172.0
+    compatible_fuels:
+      - "hfo"
+      - "mgo"
+      - "lng"
+      - "methanol_grey"
+      - "methanol_green"
+      - "ammonia_green"
+    capex_usd: 78000000
+    opex_usd_per_day: 8800
+    shore_power_equipped: true
+    shore_power_retrofit_cost_usd: 1100000
+
+  - id: "bulk_carrier_panamax"
+    name: "Bulk Carrier (Panamax)"
+    category: "Dry Bulk"
+    capacity: 76000
+    capacity_unit: "DWT"
+    deadweight_dwt: 76000
+    lightship_tonnes: 13500
+    displacement_tonnes: 89500
+    length_m: 225.0
+    beam_m: 32.2
+    design_draft_m: 14.2
+    design_speed_knots: 14.0
+    min_speed_knots: 9.0
+    max_speed_knots: 15.5
+    engine_mcr_kw: 9800
+    aux_engine_kw: 1400
+    base_sfoc_g_per_kwh: 168.0
+    compatible_fuels:
+      - "hfo"
+      - "mgo"
+      - "lng"
+      - "ammonia_green"
+    capex_usd: 42000000
+    opex_usd_per_day: 5400
+    shore_power_equipped: false
+    shore_power_retrofit_cost_usd: 450000
+
+  - id: "tanker_aframax"
+    name: "Tanker (Aframax)"
+    category: "Liquid Bulk"
+    capacity: 112000
+    capacity_unit: "DWT"
+    deadweight_dwt: 112000
+    lightship_tonnes: 20200
+    displacement_tonnes: 132200
+    length_m: 245.0
+    beam_m: 42.0
+    design_draft_m: 15.0
+    design_speed_knots: 14.5
+    min_speed_knots: 9.5
+    max_speed_knots: 16.0
+    engine_mcr_kw: 13800
+    aux_engine_kw: 2100
+    base_sfoc_g_per_kwh: 169.0
+    compatible_fuels:
+      - "hfo"
+      - "mgo"
+      - "lng"
+      - "methanol_green"
+    capex_usd: 68000000
+    opex_usd_per_day: 7100
+    shore_power_equipped: true
+    shore_power_retrofit_cost_usd: 800000
+
+  - id: "roro_carrier"
+    name: "Ro-Ro Vehicle Carrier"
+    category: "Pure Car/Truck Carrier"
+    capacity: 4500
+    capacity_unit: "CEU" # Car Equivalent Units
+    deadweight_dwt: 19500
+    lightship_tonnes: 15500
+    displacement_tonnes: 35000
+    length_m: 199.0
+    beam_m: 32.2
+    design_draft_m: 9.8
+    design_speed_knots: 19.0
+    min_speed_knots: 11.0
+    max_speed_knots: 21.5
+    engine_mcr_kw: 15200
+    aux_engine_kw: 2600
+    base_sfoc_g_per_kwh: 175.0
+    compatible_fuels:
+      - "hfo"
+      - "mgo"
+      - "lng"
+      - "methanol_green"
+      - "ammonia_green"
+    capex_usd: 72000000
+    opex_usd_per_day: 7900
+    shore_power_equipped: true
+    shore_power_retrofit_cost_usd: 900000
+
+  - id: "passenger_ferry"
+    name: "Ro-Pax Ferry"
+    category: "Passenger / Ro-Pax"
+    capacity: 1500
+    capacity_unit: "Pax + 400 Cars"
+    deadweight_dwt: 7500
+    lightship_tonnes: 16000
+    displacement_tonnes: 23500
+    length_m: 165.0
+    beam_m: 27.0
+    design_draft_m: 6.2
+    design_speed_knots: 20.0
+    min_speed_knots: 12.0
+    max_speed_knots: 23.0
+    engine_mcr_kw: 24000
+    aux_engine_kw: 4000
+    base_sfoc_g_per_kwh: 184.0
+    compatible_fuels:
+      - "mgo"
+      - "lng"
+      - "methanol_green"
+      - "hydrogen_liquid"
+    capex_usd: 85000000
+    opex_usd_per_day: 9500
+    shore_power_equipped: true
+    shore_power_retrofit_cost_usd: 1200000

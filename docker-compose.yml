@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  greenfleet-q:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: greenfleet-q-app
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - CARBON_PRICE_DEFAULT=85.0
+      - IMO_CII_YEAR=2026
+      - SEED=42
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    restart: unless-stopped

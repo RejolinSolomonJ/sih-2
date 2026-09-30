@@ -1,0 +1,105 @@
+# GreenFleet Q - Fuel & Energy Source Configuration
+# Source citations:
+# 1. IMO Fourth IMO GHG Study (2020) - Table 23: Default emissions factors
+# 2. FuelEU Maritime Regulation (EU) 2023/1805 - Annex I & II (Well-to-Tank and Tank-to-Wake factors)
+# 3. IEA Global Energy and Maritime Outlook (2024) - Bunkering pricing estimates
+# 4. ICCT (International Council on Clean Transportation) - Marine Alternative Fuels Lifecycle GHG Analysis
+
+fuels:
+  - id: "hfo"
+    name: "Heavy Fuel Oil / VLSFO"
+    category: "Conventional Fossil"
+    lcv_mj_per_kg: 40.2          # Lower Calorific Value (MJ/kg)
+    cost_per_tonne_usd: 580.0    # 2024-2025 typical marine bunkering spot avg ($/metric tonne)
+    density_kg_per_m3: 980.0     # Fuel density
+    emission_factor_ttw: 3.114   # Tank-to-Wake CO2e (tCO2e / t_fuel) - IMO default
+    emission_factor_wtt: 0.550   # Well-to-Tank upstream production & supply (tCO2e / t_fuel)
+    emission_factor_wtw: 3.664   # Well-to-Wake lifecycle GHG (tCO2e / t_fuel)
+    sulfur_content_pct: 0.5      # % m/m IMO global sulfur cap
+    bunkering_availability: "Global"
+    maturity_trl: 9
+
+  - id: "mgo"
+    name: "Marine Gas Oil (MGO/MDO)"
+    category: "Distillate Fossil"
+    lcv_mj_per_kg: 42.7
+    cost_per_tonne_usd: 820.0
+    density_kg_per_m3: 860.0
+    emission_factor_ttw: 3.206
+    emission_factor_wtt: 0.610
+    emission_factor_wtw: 3.816
+    sulfur_content_pct: 0.1      # ECA zone compliant
+    bunkering_availability: "Global"
+    maturity_trl: 9
+
+  - id: "lng"
+    name: "Liquefied Natural Gas (LNG)"
+    category: "Cryogenic Fossil"
+    lcv_mj_per_kg: 49.1
+    cost_per_tonne_usd: 720.0
+    density_kg_per_m3: 450.0
+    emission_factor_ttw: 2.750   # Direct combustion CO2
+    emission_factor_wtt: 0.880   # Upstream liquefaction and transport
+    emission_factor_wtw: 3.630   # Includes typical 2-stroke low-pressure methane slip
+    sulfur_content_pct: 0.002
+    bunkering_availability: "Major Hubs"
+    maturity_trl: 8
+
+  - id: "methanol_grey"
+    name: "Methanol (Fossil / Grey)"
+    category: "Alternative Liquid"
+    lcv_mj_per_kg: 19.9
+    cost_per_tonne_usd: 420.0
+    density_kg_per_m3: 792.0
+    emission_factor_ttw: 1.375
+    emission_factor_wtt: 1.510   # Natural gas reforming upstream penalty
+    emission_factor_wtw: 2.885
+    sulfur_content_pct: 0.0
+    bunkering_availability: "Growing"
+    maturity_trl: 7
+
+  - id: "methanol_green"
+    name: "Bio/E-Methanol (Green)"
+    category: "Renewable Electrofuel"
+    lcv_mj_per_kg: 19.9
+    cost_per_tonne_usd: 980.0
+    density_kg_per_m3: 792.0
+    emission_factor_ttw: 1.375   # Carbon combustion
+    emission_factor_wtt: -1.050  # Biogenic carbon capture or direct air capture credit
+    emission_factor_wtw: 0.325   # Net lifecycle lifecycle footprint (FuelEU compliant)
+    sulfur_content_pct: 0.0
+    bunkering_availability: "Selective Hubs"
+    maturity_trl: 6
+
+  - id: "ammonia_green"
+    name: "Green Ammonia (NH3)"
+    category: "Zero-Carbon Carrier"
+    lcv_mj_per_kg: 18.6
+    cost_per_tonne_usd: 890.0
+    density_kg_per_m3: 681.0
+    emission_factor_ttw: 0.000   # Direct CO2 is zero (minor N2O pilot accounted in wtt)
+    emission_factor_wtt: 0.220   # Electrolysis + Haber Bosch via renewables
+    emission_factor_wtw: 0.220
+    sulfur_content_pct: 0.0
+    bunkering_availability: "Pilot Ports"
+    maturity_trl: 5
+
+  - id: "hydrogen_liquid"
+    name: "Liquid Green Hydrogen (LH2)"
+    category: "Zero-Carbon Carrier"
+    lcv_mj_per_kg: 120.0
+    cost_per_tonne_usd: 4200.0
+    density_kg_per_m3: 71.0
+    emission_factor_ttw: 0.000
+    emission_factor_wtt: 0.280   # Upstream liquefaction compression
+    emission_factor_wtw: 0.280
+    sulfur_content_pct: 0.0
+    bunkering_availability: "Very Limited"
+    maturity_trl: 4
+
+shore_power:
+  name: "Onshore Power Supply (Cold Ironing)"
+  cost_per_mwh_usd: 145.0
+  grid_emission_factor_kg_co2_per_kwh: 0.385  # Global grid avg (0.385 tCO2e/MWh)
+  efficiency: 0.94
+  connection_time_hours: 1.5

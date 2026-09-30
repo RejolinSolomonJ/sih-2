@@ -1,0 +1,67 @@
+# GreenFleet Q - Standard Global Benchmark Routes and Demand Scenarios
+
+routes:
+  - id: "route_eur_asia"
+    name: "Asia - Northern Europe Loop"
+    origin_port: "Shanghai (CNSHA)"
+    destination_port: "Rotterdam (NLRTM)"
+    distance_nm: 10800
+    demand_per_quarter: 48000  # TEU
+    service_window_days: 65    # Roundtrip cycle window
+    port_time_days: 6.5        # Port dwell time total
+    shore_power_origin: true
+    shore_power_dest: true
+    wave_height_avg_m: 2.8
+    headwind_avg_knots: 14.0
+
+  - id: "route_transpacific"
+    name: "Transpacific Eastbound"
+    origin_port: "Shenzhen (CNSZX)"
+    destination_port: "Los Angeles (USLAX)"
+    distance_nm: 6500
+    demand_per_quarter: 36000
+    service_window_days: 42
+    port_time_days: 4.8
+    shore_power_origin: true
+    shore_power_dest: true
+    wave_height_avg_m: 2.4
+    headwind_avg_knots: 11.5
+
+  - id: "route_med_feeder"
+    name: "Mediterranean Short-Sea Feeder"
+    origin_port: "Piraeus (GRPIR)"
+    destination_port: "Genoa (ITGOA)"
+    distance_nm: 1250
+    demand_per_quarter: 18000
+    service_window_days: 14
+    port_time_days: 2.2
+    shore_power_origin: true
+    shore_power_dest: true
+    wave_height_avg_m: 1.6
+    headwind_avg_knots: 9.0
+
+  - id: "route_india_me"
+    name: "India - Middle East Bulk & Tanker"
+    origin_port: "Mundra (INMUN)"
+    destination_port: "Ras Tanura (SARST)"
+    distance_nm: 1650
+    demand_per_quarter: 650000 # DWT bulk/tanker cargo
+    service_window_days: 18
+    port_time_days: 3.5
+    shore_power_origin: false
+    shore_power_dest: true
+    wave_height_avg_m: 1.8
+    headwind_avg_knots: 10.0
+
+  - id: "route_baltic_ferry"
+    name: "Baltic Ro-Pax Corridor"
+    origin_port: "Stockholm (SESTO)"
+    destination_port: "Helsinki (FIHEL)"
+    distance_nm: 250
+    demand_per_quarter: 90000  # Passengers/Cars equivalent
+    service_window_days: 4
+    port_time_days: 0.8
+    shore_power_origin: true
+    shore_power_dest: true
+    wave_height_avg_m: 1.2
+    headwind_avg_knots: 8.5
